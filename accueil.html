@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+    <div class="loader-bg">
+        <div class="loader"></div>
+    </div>
+    
+    <header>
+        <div class="logo-container">
+            <img src="images/logo visconty.png" width="100px" alt="logo"  >
+        </div>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar"><i class='bx bx-menu' ></i></label>
+
+        <nav class="navigation">
+            <a href="accueil.html" class="active">Acceuil<span></span></a>
+            <a href="presentation.html" >Presentation<span></span></a>
+            <a href="prestations.html">Prestations<span></span></a>
+            <a href="actualité.html">Actualités<span></span></a>
+            <a href="contact.html">Contact<span></span></a>
+        </nav>
+        
+        
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h5 >Visconty</h5>
+            <h1 class="static-text">TRADE<span style="color: #196786;">LINK</span></h1>
+            <div class="dynamic-txts">
+                <ul id="dynamic-text-list">
+                    <li><span >explorer</span></li>
+                    
+                    
+                </ul>  
+            </div>
+            <p>Prestataire de services aux entreprises établies (PMI,PME et START UP ) et en plein développement.
+                En France et à l'International (EUROPE, AFRIQUE).</p>
+            <a href="tel:+33 6 29 47 52 08"><i class='bx bx-phone' ></i>+33 6 29 47 52 08</a>
+            
+        </div>
+
+        <div class="hero-img">
+            <img src="images/tade.jpeg" alt="image"   >
+        </div>
+
+       
+    </section>
+
+    <div class="icons">
+        <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+    </div>
+
+    <script>
+        const texts = ['explorer'];
+        let currentIndex = 0;
+        
+        function changeText() {
+            const dynamicTextList = document.getElementById('dynamic-text-list');
+            // Mettre à jour le texte dynamique
+            dynamicTextList.innerHTML = `<li><span>${texts[currentIndex]}</span></li>`;
+            // Passer au texte suivant
+            currentIndex = (currentIndex + 1) % texts.length;
+        }
+        
+        // Changer le texte toutes les 3 secondes
+        setInterval(changeText, 3000);
+        
+        // Initialiser le texte au chargement de la page
+        changeText();
+    </script>
+
+    <section class="about">
+        <div id="prest-section">
+            <h2>les principales Prestations</h2>
+            <p id="paragraphe">Des experts au service du développement de votre chiffre d'affaires.
+            </p>
+
+            <div class="tofs">
+                <div class="tof">
+                    <i class='bx bx-user-pin bx-flashing' ></i>
+                    <div class="cliche">
+                        <h3>Approvisionneur conseil</h3>
+                        
+                        <p>Des experts au service du développement de votre chiffre d'affaires.</p>
+                        <button class="en-savoir-plus" ><a href="prestations-pid.html">En savoir plus<i class='bx bx-plus bx-flashing' ></i></a></button>
+                    </div>
+                </div>
+
+                <div class="tof">
+                    <i class='bx bx-check-square bx-flashing' ></i>
+                    <div class="cliche">
+                        <h3>produits régionaux</h3>
+                        
+                        <p>Un interlocuteur privilégié vous accompagne</p>
+                        <button class="en-savoir-plus" ><a href="prestations-pid.html">En savoir plus<i class='bx bx-plus bx-flashing' ></i></a></button>
+                    </div>
+                </div>
+
+                <div class="tof">
+                    <i class='bx bx-home-smile bx-flashing' ></i>
+                    <div class="cliche">
+                        <h3>Mise en relation</h3>
+                        
+                        <p>Un spécialiste est à votre disposition pour vous guider</p>
+                        <button class="en-savoir-plus" ><a href="prestations-pid.html">En savoir plus<i class='bx bx-plus bx-flashing' ></i></a></button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const section = document.getElementById('prest-section');
+                const tofs = section.querySelectorAll('.tofs');
+                
+                function handleScroll() {
+                    const sectionRect = section.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionRect.top <= windowHeight * 0.75) {
+                        section.classList.add('visible');
+                        tofs.forEach((tof, index) => {
+                            setTimeout(() => {
+                                tof.classList.add('visible');
+                            }, 100 * index); // Staggered animation for each .tof element
+                        });
+                        // Remove the event listener after the animation has triggered
+                        window.removeEventListener('scroll', handleScroll);
+                    }
+                }
+                
+                window.addEventListener('scroll', handleScroll);
+                // Trigger scroll event on page load in case section is already in view
+                handleScroll();
+            });
+            </script>
+            
+
+        
+
+    </section>
+
+    
+
+
+    <section class="equipe">
+
+        <div class="title">
+            
+            <p>Les produits Visconty Trade Link</p>
+        </div>
+
+        <div class="wrapper">
+            <i id="left" class='bx bx-chevron-left'></i>
+            <ul class="carousel">
+                <li class="cadre">
+                    <div class="image">
+                        <img src="images/vinho.jpeg" alt="image"  draggable="false">
+                        <h2>vin</h2>
+                        <span>visconty</span>
+                        <div class="message-button"><a href="actualité-pid.html">Plus d'info</a></div>
+                    </div>
+                </li>
+
+                <li class="cadre">
+                    <div class="image">
+                        <img src="images/vinho.jpeg" alt="image"  draggable="false">
+                        <h2>vin</h2>
+                        <span>visconty</span>
+                        <div class="message-button"><a href="actualité-pid.html">Plus d'info</a></div>
+                    </div>
+                </li>
+
+                <li class="cadre">
+                    <div class="image">
+                        <img src="images/vinho.jpeg" alt="image"  draggable="false">
+                        <h2>vin</h2>
+                        <span>visconty</span>
+                        <div class="message-button"><a href="actualité-pid.html">Plus d'info</a></div>
+                    </div>
+                </li>
+
+                <li class="cadre">
+                    <div class="image">
+                        <img src="images/vinho.jpeg" alt="image"  draggable="false">
+                        <h2>vin</h2>
+                        <span>visconty</span>
+                        <div class="message-button"><a href="actualité-pid.html">Plus d'info</a></div>
+                    </div>
+                </li>
+
+               
+            </ul>
+            <i id="right" class='bx bx-chevron-right'></i>
+           
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const cadres = document.querySelectorAll('.cadre');
+                
+            
+                function handleScroll() {
+                    const windowHeight = window.innerHeight;
+            
+                    cadres.forEach(cadre => {
+                        const rect = cadre.getBoundingClientRect();
+                        if (rect.top <= windowHeight * 0.75 && rect.bottom >= 0) {
+                            cadre.classList.add('visible');
+                        }
+                    });
+                }
+            
+                window.addEventListener('scroll', handleScroll);
+                handleScroll(); // Trigger scroll event on page load in case elements are already in view
+            });
+            </script>
+            
+
+    </section>
+
+    
+    
+
+    <section class="presentation">
+        <div class="text-pr">
+            <h5>pourquoi nous choisir</h5>
+            <p>Des experts au service du développement de votre chiffre d'affaires.</p>
+        </div>
+
+        <div class="container">
+            <div class="card" id="1" style="--clr:#196786;" >
+                <div class="box">
+                    <div class="icon">
+                        <div class="iconBox"><i class='bx bx-brush' ></i></div>
+                    </div>
+                    <div class="content">
+                        <h3>PROSPECTION COMMERCIALE</h3>
+                        <p> Une connaissance approfondie des marchés européens et africains
+                        </p>
+                        <!-- <a href="#">En savoir plus<i class='bx bx-plus'></i></a> -->
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card" style="--clr:#196786;" >
+                <div class="box">
+                    <div class="icon">
+                        <div class="iconBox"><i class='bx bx-code-alt' ></i></div>
+                    </div>
+                    <div class="content">
+                        <h3>OFFRE GLOBALE DE PRESTATION COMMERCIALE</h3>
+                        <p>Des solutions adaptées aux besoins spécifiques de chaque client.
+                        </p>
+                        <!-- <a href="#">En savoir plus<i class='bx bx-plus'></i></a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--clr:#196786;" >
+                <div class="box">
+                    <div class="icon">
+                        <div class="iconBox"><i class='bx bx-rocket' ></i></div>
+                    </div>
+                    <div class="content">
+                        <h3>CONSEIL EN DÉVELOPPEMENT </h3>
+                        <p> Une équipe dédiée prête à s’adapter à vos exigences.
+                        </p>
+                        <!-- <a href="#" >En savoir plus<i class='bx bx-plus'></i></a> -->
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+            
+        </div>
+    </section>
+
+
+
+
+    <section class="footer">
+        <div class="footer-image">
+            <img src="images/logo visconty.png" style="max-width: 80%; width: 100px; height: auto;" alt="">
+            <p>VISCONTY TRADE LINK
+                Prestataire de services aux entreprises établies (PMI,PME et START UP ) et en plein développement.
+                En France et à l'International (EUROPE, AFRIQUE).</p>
+            <div class="footer-icons">
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx    bxl-linkedin'></i></a>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <h4>liens</h4>
+            <li><a href="prestations-pid.html">approvisonneur conseil</a></li>
+            <li><a href="prestations-pid.html">produits regionaux</a></li>
+            <li><a href="prestations-pid.html">industrie</a></li>
+            <li><a href="prestations-pid.html">Commerce agroalimentaire</a></li>
+            <li><a href="prestations-pid.html">mise en relation</a></li>
+            <li><a href="prestations-pid.html">mandataire commercial</a></li>
+        </div>
+
+        
+        <div class="footer-content">
+            <h4>pages</h4>
+            <li><a href="accueil.html">Acceuil</a></li>
+            <li><a href="presentation.html">Presentations</a></li>
+            <li><a href="prestations.html">Prestations</a></li>
+            <li><a href="actualité.html">Actualités</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </div>
+
+        <div class="footer-content">
+            <h4>Adresse</h4>
+            <li>
+                <span><i class='bx bxs-location-plus'></i></span>
+                <p><a href="adresse:3 rue du Clos Londeix 87000 Limoges, Limoges" style="cursor: text;" ><span>3 rue du Clos Londeix<br>87000 Limoges<br> Limoges </span></a></p>
+                
+            </li>
+
+            <li>
+                <span><i class='bx bxs-phone-call' ></i></span>
+                <p><a href="tel:+33 6 29 47 52 08">+33 6 29 47 52 08</a></p>
+            </li>
+
+            <li>
+                <span><i class='bx bxs-envelope' ></i></span>
+                <p><a href="mailto: contact@visconty.fr"> contact@visconty.fr</a></p>
+            </li>
+        </div>
+        
+    </section>
+
+    <div class="copyrightText">
+        <p>Copyright © 2022 – 2023 <span style="color: #196786;">Visconty Tradelink</span>. Tous les Droits sont Réservés.</p>
+    </div>
+
+
+    <button class="scroll-to-top hidden-mobile" id="scrollToTopBtn"><i class='bx bxs-up-arrow'></i></button>
+
+    <script>
+        // Get the button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Show or hide the button depending on scroll position
+        window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Show button after scrolling 300px
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+        });
+
+        // Scroll to top functionality
+        scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+
+
+       
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    
+    
+
+</body>
+</html>

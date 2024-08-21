@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body> 
+
+    <header>
+        <div class="logo-container">
+            <img src="images/logo visconty.png" alt="logo" width="100px" >
+        </div>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar"><i class='bx bx-menu' ></i></label>
+        
+        <nav class="navigation">
+            <a href="accueil.html">Acceuil<span></span></a>
+            <a href="presentation.html"class="active" >Presentation<span></span></a>
+            <a href="prestations.html">Prestations<span></span></a>
+            <a href="actualité.html">Actualités<span></span></a>
+            <a href="contact.html">Contact<span></span></a>
+
+            
+        </nav>
+        
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h5 >Visconty</h5>
+            <h1 class="static-text">presen<span style="color: #196786;">tation</span></h1>
+            <div class="dynamic-txts">
+                <ul style="margin-left: 55px;">
+                    <li><span >connecter</span></li>
+                </ul>  
+            </div>
+            <p>Forte d'une expertise reconnue en logistique et en gestion des chaînes d'approvisionnement, Visconty Tradelink offre des solutions intégrées pour optimiser les opérations commerciales globales. .</p>
+            <a href="tel:+33 6 29 47 52 08"><i class='bx bx-phone' ></i>+33 6 29 47 52 08</a>
+            
+        </div>
+
+        <div class="hero-img" id="hero-propos">
+            <img src="images/Pitch meeting.gif" width="100%" style="margin-top: auto; margin-right: 20px;" >
+        </div>
+
+    </section>
+
+    <div class="icons">
+        <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+    </div>
+
+   
+
+    <section class="propos">
+
+        <div class="propos-text fade-in">
+
+            <p><span>Qui sommes-nous ?</span><br>
+                Nous nous engageons à offrir des solutions sur mesure, adaptées aux besoins spécifiques de chaque client. Grâce à notre approche personnalisée, nous visons à établir des relations de confiance et à garantir la satisfaction de nos partenaires.<br>
+                Nos spécialités couvrent les domaines de l'énergie renouvelable, de l'industrie, du commerce, de l'agrobusiness, de la viticulture, des équipements informatiques, de la chimie, du transport et de la logistique. Nous avons une approche terrain par la présence physique, faire plus, faire mieux dans une optique gagnant/gagnant.
+                
+                <div class="val">NOS valeurs : </div><br>
+        
+                <div><span style="color: #196786; font-size: 1.2em; font-weight: 600; margin-left: 20px;"><i class='bx bx-check-shield'></i>  Conseiller Stratégique </span><br>
+        
+                    <span style="color: #196786; font-size: 1.2em; font-weight: 600;  margin-left: 20px ;"><i class='bx bx-check-shield'></i>  Accompagnateur</span><br>
+                    <span style="color: #196786; font-size: 1.2em; font-weight: 600;  margin-left: 20px ;"><i class='bx bx-check-shield'></i>  Facilitateurs</span><br>
+                    <span style="color: #196786; font-size: 1.2em; font-weight: 600;  margin-left: 20px ;"><i class='bx bx-check-shield'></i>  Formateur</span><br>
+                    <span style="color: #196786; font-size: 1.2em; font-weight: 600;  margin-left: 20px ;"><i class='bx bx-check-shield'></i>  Veilleur</span><br>
+                    <p>Chez Visconty Trade Link, nous mettons à votre disposition des spécialistes expérimentés pour répondre à vos besoins en vente, achat ou services spécifiques. Que vous soyez dans l'industrie, le commerce, les vins et spiritueux, l'agroalimentaire ou l'artisanat, nous avons le professionnel qu'il vous faut pour résoudre vos problématiques.</p>
+                </div>
+            </p> 
+        </div>
+        
+     
+        <div class="propos-img">
+            <div class="carte">
+                <div class="carte-contenu">
+                    <a href="#" class="click">Notre identité </a> 
+                </div>
+               
+            </div>
+            <div class="carte">
+                <div class="carte-contenu">
+                    <a href="#" class="click">Notre identité </a> 
+                </div>
+               
+            </div>
+            <div class="carte">
+                <div class="carte-contenu">
+                    <a href="#" class="click">Notre identité </a> 
+                </div>
+               
+            </div>
+ 
+        </div>
+
+        
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fonction pour gérer les éléments observés
+            const handleIntersection = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Ajouter la classe 'visible' lorsque l'élément est visible
+                        entry.target.classList.add('visible');
+                        // Optionnel : arrêter d'observer une fois que l'élément est visible
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            // Créer une instance d'IntersectionObserver
+            const observer = new IntersectionObserver(handleIntersection, {
+                threshold: 0.1  // Déclencher lorsque 10% de l'élément est visible
+            });
+
+            // Sélectionner les éléments à observer
+            const elementsToAnimate = document.querySelectorAll('.propos-text, .propos-img' );
+
+            // Observer chaque élément
+            elementsToAnimate.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+    </script>
+
+
+    <div class="cart">
+        <h2><i class='bx bx-check-shield'></i>Visconty TradeLink</h2>
+        <p class="cart-body">Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons vous aider à transformer vos ambitions en réalité et à propulser votre entreprise vers de nouveaux horizons !</p>
+        <a href="contact.html" class="touch">Contactez-nous</a>
+    </div>
+
+    <div class="skills" >
+        <h1><i class='bx bx-slider'></i>notre dexterité</h1>
+        <p>Notre équipe se compose de spécialistes qui possèdent en moyenne 10 ans d’expérience dans leurs secteurs respectifs. Cette solide expérience nous permet d'offrir des solutions sur mesure et d'accompagner nos clients vers le succès.</p>
+    </div>
+
+
+    <h1 class="sub-title" >
+        <span>dexterité</span>
+    </h1>
+
+    <section class="progres">
+        <div class="container1" id="container">
+        <!---    <h1 class="heading1">competences</h1> -->
+            <div class="technical-bars">
+                <div class="bar">
+                    <div class="info">
+                        <span>Approvisionneur conseil</span>
+                    </div>
+                    <div class="progress-line html">
+                        <span data-percent="90%"></span>
+                    </div>
+                </div>  
+                
+                <div class="bar">
+                    <div class="info">
+                        <span>produits régionaux.</span>
+                    </div>
+                    <div class="progress-line css">
+                        <span data-percent="60%"></span>
+                    </div>
+                </div> 
+
+                <div class="bar">
+                    <div class="info">
+                        <span>industrie</span>
+                    </div>
+                    <div class="progress-line javascript">
+                        <span data-percent="75%"></span>
+                    </div>
+                </div> 
+
+                <div class="bar">
+                    <div class="info">
+                        <span>commerce agroalimentaire</span>
+                    </div>
+                    <div class="progress-line python">
+                        <span data-percent="70%"></span>
+                    </div>
+                </div>   
+                
+                <div class="bar">
+                    <div class="info">
+                        <span>mandataire commercial</span>
+                    </div>
+                    <div class="progress-line python">
+                        <span data-percent="50%"></span>
+                    </div>
+                </div>
+
+                <div class="bar">
+                    <div class="info">
+                        <span>mise en relation</span>
+                    </div>
+                    <div class="progress-line python">
+                        <span data-percent="50%"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container2">
+            <!---    <h1 class="heading1">competences</h1> -->
+           <img src="images/undraw_Booking_re_gw4j.png" alt="" >
+
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const options = {
+                    root: null, // Use the viewport as the root
+                    rootMargin: '0px',
+                    threshold: 0.5 // Trigger when 50% of the element is visible
+                };
+            
+                const handleIntersect = (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Add animation class when in viewport
+                            entry.target.classList.add('show');
+                            observer.unobserve(entry.target); // Stop observing after animation
+                        }
+                    });
+                };
+            
+                const observer = new IntersectionObserver(handleIntersect, options);
+            
+                // Target all containers
+                document.querySelectorAll('.container1, .sub-title, .skills').forEach(container => {
+                    observer.observe(container);
+                });
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                // Sélectionnez le conteneur
+                const container = document.getElementById('container');
+
+                // Créez une instance de l'IntersectionObserver
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Ajoutez la classe "animate" lorsque le conteneur est visible
+                            entry.target.classList.add('animate');
+                        } else {
+                            // Optionnel : retirer la classe si le conteneur sort de la vue
+                            entry.target.classList.remove('animate');
+                        }
+                    });
+                }, {
+                    threshold: 0.1 // Ajustez ce seuil selon vos besoins
+                });
+
+                // Observez le conteneur
+                observer.observe(container);
+            });
+
+
+
+            </script>
+            
+
+       
+    </section>
+
+    
+
+    
+    <section class="footer">
+        <div class="footer-image">
+            <img src="images/logo visconty.png" style="max-width: 80%; width: 100px; height: auto;" alt="">
+            <p>VISCONTY TRADE LINK
+                Prestataire de services aux entreprises établies (PMI,PME et START UP ) et en plein développement.
+                En France et à l'International (EUROPE, AFRIQUE).</p>
+            <div class="footer-icons">
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <h4>liens</h4>
+            <li><a href="prestations-pid.html">approvisonneur conseil</a></li>
+            <li><a href="prestations-pid.html">produits regionaux</a></li>
+            <li><a href="prestations-pid.html">industrie</a></li>
+            <li><a href="prestations-pid.html">Commerce agroalimentaire</a></li>
+            <li><a href="prestations-pid.html">mise en relation</a></li>
+            <li><a href="prestations-pid.html">mandataire commercial</a></li>
+        </div>
+
+        
+        <div class="footer-content">
+            <h4>pages</h4>
+            <li><a href="accueil.html">Acceuil</a></li>
+            <li><a href="presentation.html">Presentations</a></li>
+            <li><a href="prestations.html">Prestations</a></li>
+            <li><a href="actualité.html">Actualités</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </div>
+
+        <div class="footer-content">
+            <h4>Adresse</h4>
+            <li>
+                <span><i class='bx bxs-location-plus'></i></span>
+                <p><a href="adresse:3 rue du Clos Londeix 87000 Limoges, Limoges" style="cursor: text;"><span>3 rue du Clos Londeix<br>87000 Limoges<br> Limoges </span></a></p>
+                
+            </li>
+
+            <li>
+                <span><i class='bx bxs-phone-call' ></i></span>
+                <p><a href="tel:+33 6 29 47 52 08">+33 6 29 47 52 08</a></p>
+            </li>
+
+            <li>
+                <span><i class='bx bxs-envelope' ></i></span>
+                <p><a href="mailto: contact@visconty.fr"> contact@visconty.fr</a></p>
+            </li>
+        </div>
+        
+    </section>
+
+    <div class="copyrightText">
+        <p>Copyright © 2022 – 2023 <span style="color: #196786;">Visconty Tradelink</span>. Tous les Droits sont Réservés.</p>
+    </div>
+
+
+    <button class="scroll-to-top hidden-mobile" id="scrollToTopBtn"><i class='bx bxs-up-arrow'></i></button>
+
+    <script>
+        // Get the button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Show or hide the button depending on scroll position
+        window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Show button after scrolling 300px
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+        });
+
+        // Scroll to top functionality
+        scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+
+
+       
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    
+    
+
+</body>
+</html>

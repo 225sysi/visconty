@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+   
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/logo visconty.png" alt="logo" width="100px" >
+        </div>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar"><i class='bx bx-menu' ></i></label>
+        
+        <nav class="navigation">
+            <a href="accueil.html">Acceuil<span></span></a>
+            <a href="presentation.html" >Presentations<span></span></a>
+            <a href="prestations.html">Prestations<span></span></a>
+            <a href="actualité.html">Actualités<span></span></a>
+            <a href="contact.html" class="active">Contact<span></span></a>
+
+        </nav>
+        
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h5 >Visconty</h5>
+            <h1 class="static-text">cont<span style="color: #196786;">actez</span></h1>
+            <div class="dynamic-txts">
+                <ul style="margin-left: 15px;">
+                    <li><span >- nous</span></li>
+                </ul>  
+            </div>
+            <p>Prestataire de services aux entreprises établies (PMI,PME et START UP ) et en plein développement.
+                En France et à l'International (EUROPE, AFRIQUE).</p>
+            <a href="tel:+33 6 29 47 52 08"><i class='bx bx-phone' ></i>+33 6 29 47 52 08</a>
+            
+        </div>
+
+        <div class="hero-img">
+            <img src="images/12084824_20943984.jpg"  width="120%" style="margin-top: auto; margin-right: 20px;" >
+        </div>
+
+    </section>
+
+    <div class="icons">
+        <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+    </div>
+
+    
+
+    <section class="touch-contact">
+        <div class="container">
+            <div class="item">
+                <div class="contact">
+                    <h3><span><i class='bx bxs-phone-call' ></i></span> Nous contactez</h3> 
+                    <div class="second-text">
+                        <p></p>
+                    </div>
+                    <div> <img class="monImage" src="images/12084824_20943984.jpg" alt=""></div>
+                    
+                    <div class="contact-content">
+                        <h4>details du contact</h4>
+                        <li>
+                            <span><i class='bx bxs-location-plus'></i></span>
+                            <p><a href="adresse:3ème étage N° 6، 20 Rue Daoud Dahiri, Casablanca 20330"><span>3 rue du Clos Londeix<br>87000 Limoges<br> Limoges </span></a></p>
+                            
+                        </li>
+                
+                        <li>
+                            <span><i class='bx bxs-phone-call' ></i></span>
+                            <p><a href="tel:+33 6 29 47 52 08">+33 6 29 47 52 08</a></p>
+                            
+                        </li>
+                
+                        <li>
+                            <span><i class='bx bxs-envelope' ></i></span>
+                            <p><a href="mailto:contact@visconty.fr">contact@visconty.fr</a></p>
+                        </li>
+                    </div>
+                    <div class="socials-links">
+                        
+                        <ul class="social-media">
+                            <li><a href=""><i class='bx bxl-facebook'></i></a></li>
+                            <li><a href=""><i class='bx bxl-instagram-alt'></i></a></li>
+                            <li><a href=""><i class='bx bxl-linkedin'></i></a></li>
+                        </ul>
+                        <span class="second-text" >réseaux sociaux</span>
+                    </div>
+
+                </div>
+                <div class="submit-form">
+                    <h4 class="third-text">contact</h4> 
+                    <form action="contactform.php" method="POST">
+                        <div class="input-box">
+                            <input type="text" id="name" class="input" name="nom"  required>
+                            <label for="nom">nom</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="email" id="email" class="input" name="email"  required>
+                            <label for="email">email</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="tel" id="telephone" class="input" name="telephone"  required>
+                            <label for="telephone">telephone</label>
+                        </div>
+                        <div class="input-box">
+                            <textarea name="message" id="message"  class="input" required cols="30" rows="10"></textarea>
+                            <label for="message">message</label>
+                        </div>
+                        <input type="submit" id="sub" name= "submit" class="submit" value="envoi">
+                        <script>
+                            var to = "contact@visconty.fr";
+                            var subject = "Nouveau Message";
+
+                            document.getElementById('sub').addEventListener('click', function(event) {
+                                event.preventDefault(); // Empêcher la soumission par défaut du formulaire
+
+                                var nom = document.getElementById('name').value;
+                                var email = document.getElementById('email').value;
+                                var telephone = document.getElementById('telephone').value;
+                                var message = "Nom : " + nom + "\nEmail : " + email + "\nTéléphone : " + telephone + "\n\n" + document.getElementById('message').value;
+
+                                // Valider l'adresse e-mail
+                                if (!validateEmail(email)) {
+                                    alert('Adresse e-mail non valide.');
+                                    return;
+                                }
+
+                                // Envoyer l'e-mail via fetch
+                                fetch('https://codingmailer.onrender.com/send-email', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        to: to,
+                                        subject: subject,
+                                        message: message
+                                    })
+                                })
+                                .then(function(response) {
+                                    if (response.ok) {
+                                        alert('E-mail envoyé avec succès.');
+                                        // Réinitialiser les champs du formulaire
+                                        document.getElementById('name').value = '';
+                                        document.getElementById('email').value = '';
+                                        document.getElementById('telephone').value = '';
+                                        document.getElementById('message').value = '';
+                                    } else {
+                                        return response.json().then(function(data) {
+                                            var errorMessage = data && data.message ? data.message : 'Erreur lors de l\'envoi de l\'e-mail.';
+                                            alert('Erreur : ' + errorMessage);
+                                        });
+                                    }
+                                })
+                                .catch(function(error) {
+                                    alert('Erreur lors de l\'envoi de l\'e-mail : ' + error.message);
+                                });
+                            });
+
+                            // Fonction de validation de l'e-mail
+                            function validateEmail(email) {
+                                var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                return re.test(email);
+                            }
+
+                        </script>
+                        <div id="loading" style="display:none;">Envoi en cours...</div>
+
+                    </form>
+
+                  
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                function checkVisibility() {
+                    var windowHeight = $(window).height();
+                    var scrollTop = $(window).scrollTop();
+                    var triggerPoint = windowHeight * 0.8;
+
+                    $('.touch-contact .item').each(function() {
+                        var itemTop = $(this).offset().top;
+
+                        if (itemTop < scrollTop + triggerPoint) {
+                            $(this).addClass('visible');
+                        } else {
+                            $(this).removeClass('visible');
+                        }
+                    });
+                }
+
+                $(window).on('scroll', checkVisibility);
+                checkVisibility(); // Vérifier la visibilité au chargement
+            });
+        </script>
+
+
+
+    </section>
+
+    
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.107145523959!2d1.2407439754760807!3d45.82913710901674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47fecb5225df62db%3A0xf4eea3f7a786deae!2s3%20Rue%20du%20Clos%20Londeix%2C%2087000%20Limoges%2C%20France!5e0!3m2!1sfr!2sma!4v1721389707350!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+    
+    
+
+        
+    <section class="footer">
+        <div class="footer-image">
+            <img src="images/logo visconty.png" style="max-width: 80%; width: 100px; height: auto;" alt="">
+            <p>VISCONTY TRADE LINK
+                Prestataire de services aux entreprises établies (PMI,PME et START UP ) et en plein développement.
+                En France et à l'International (EUROPE, AFRIQUE).</p>
+            <div class="footer-icons">
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <h4>liens</h4>
+            <li><a href="prestations-pid.html">approvisonneur conseil</a></li>
+            <li><a href="prestations-pid.html">produits regionaux</a></li>
+            <li><a href="prestations-pid.html">industrie</a></li>
+            <li><a href="prestations-pid.html">Commerce agroalimentaire</a></li>
+            <li><a href="prestations-pid.html">mise en relation</a></li>
+            <li><a href="prestations-pid.html">mandataire commercial</a></li>
+        </div>
+
+        
+        <div class="footer-content">
+            <h4>pages</h4>
+            <li><a href="accueil.html">Acceuil</a></li>
+            <li><a href="presentation.html">Presentations</a></li>
+            <li><a href="prestations.html">Prestations</a></li>
+            <li><a href="actualité.html">Actualités</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </div>
+
+        <div class="footer-content">
+            <h4>Adresse</h4>
+            <li>
+                <span><i class='bx bxs-location-plus'></i></span>
+                <p ><a href="adresse:3 rue du Clos Londeix 87000 Limoges, Limoges" style="cursor: text;"><span>3 rue du Clos Londeix<br>87000 Limoges<br> Limoges </span></a></p>
+                
+            </li>
+
+            <li>
+                <span><i class='bx bxs-phone-call' ></i></span>
+                <p><a href="tel:+33 6 29 47 52 08">+33 6 29 47 52 08</a></p>
+            </li>
+
+            <li>
+                <span><i class='bx bxs-envelope' ></i></span>
+                <p><a href="mailto: contact@visconty.fr"> contact@visconty.fr</a></p>
+            </li>
+        </div>
+        
+    </section>
+
+    <div class="copyrightText">
+        <p>Copyright © 2022 – 2023 <span style="color: #196786;">Visconty Tradelink</span>. Tous les Droits sont Réservés.</p>
+    </div>
+
+    <button class="scroll-to-top hidden-mobile" id="scrollToTopBtn"><i class='bx bxs-up-arrow'></i></button>
+
+    <script>
+        // Get the button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Show or hide the button depending on scroll position
+        window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Show button after scrolling 300px
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+        });
+
+        // Scroll to top functionality
+        scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+
+
+       
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    
+    
+
+</body>
+</html>

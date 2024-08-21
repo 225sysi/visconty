@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+    
+    <header>
+        <div class="logo-container">
+            <img src="images/logo visconty.png" alt="logo" width="100px" >
+        </div>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar"><i class='bx bx-menu' ></i></label>
+        
+        <nav class="navigation">
+            <a href="accueil.html" >Acceuil<span></span></a>
+            <a href="presentation.html" >Presentation<span></span></a>
+            <a href="prestations.html"class="active">Prestations<span></span></a>
+            <a href="actualité.html">Actualités<span></span></a>
+            <a href="contact.html">Contact<span></span></a>
+
+           
+        </nav>
+        
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h5 >Visconty</h5>
+            <h1 class="static-text">prest<span style="color: #196786;">ations</span></h1>
+            <div class="dynamic-txts">
+                <ul style="margin-left: 35px;">
+                    <li><span >innovez</span></li>
+                </ul>  
+            </div>
+            <p>Nos spécialités couvrent les domaines de l'énergie renouvelable, de l'industrie, du commerce, de l'agrobusiness, de la viticulture, des équipements informatiques, de la chimie, du transport et de la logistique.</p>
+            <a href="tel:+33 6 29 47 52 08"><i class='bx bx-phone' ></i>+33 6 29 47 52 08</a>
+            
+        </div>
+
+        <div class="hero-img">
+            <img src="images/Wireframing.gif" width="100%" style="margin-top: 50px; margin-right: 20px;" >
+        </div>
+
+    </section>
+
+    <div class="icons">
+        <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+    </div>
+
+    
+
+
+   
+
+    <section class="timeline">
+        
+    
+        <div class="skill-services" >
+        
+              
+            <h1>nos prestations</h1>
+            <h2>nous offrons une ample variétés de services </h2>
+            <p>L'entreprise visconty trade link dispose de spécialiste dans leur domaine respectif d’environ 10 années d’expérience en moyenne.</p>
+               
+        </div>
+        
+        <ul>
+            <li>
+                <div>
+                    <img src="images/undraw_approve_qwp7.png" alt="">
+                    <h3><a href="prestations-pid.html">approvisonneur conseil</a></h3>
+                    <p>Des experts au service du développement de votre chiffre d'affaires.</p>
+
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <img src="images/undraw_Online_organizer_re_156n.png" alt="">
+                    <h3><a href="prestations-pid.html">produit regionaux</a></h3>
+                    <p>Des experts au service du développement de votre chiffre d'affaires.</p>
+                    
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <img src="images/undraw_factory_dy0a.png" alt="">
+                    <h3><a href="prestations-pid.html">industrie</a></h3>
+                    <p>Des experts au service du développement de votre chiffre d'affaires.</p>
+                    
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <img src="images/undraw_winter_road_mcqj.png" alt="">
+                    <h3><a href="prestations-pid.html">agroalimentaire</a></h3>
+                    <p>Des experts au service du développement de votre chiffre d'affaires.</p>
+                    
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <img src="images/undraw_Creative_team_re_85gn.png" alt="">
+                    <h3><a href="prestations-pid.html">mise en relation</a></h3>
+                    <p>Des experts au service du développement de votre chiffre d'affaires.</p>
+                    
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <img src="images/undraw_cohort_analysis_stny.png" alt="">
+                    <h3><a href="prestations-pid.html">mandataire commercial</a></h3>
+                    <p>Des experts au service du développement de votre chiffre d'affaires.</p>
+                    
+                </div>
+            </li>
+        </ul>
+
+
+
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const timelineDivs = document.querySelectorAll('.timeline ul li div');
+
+        // Appliquer des classes alternées en fonction de l'index
+        timelineDivs.forEach((div, index) => {
+            if (index % 2 === 0) {
+                div.classList.add('from-right'); // Éléments avec index pair apparaissent de droite
+            } else {
+                div.classList.add('from-left'); // Éléments avec index impair apparaissent de gauche
+            }
+        });
+
+        // Options de l'observateur
+        const options = {
+            root: null, // Observer par rapport à la fenêtre
+            rootMargin: '0px',
+            threshold: 0.1 // Pourcentage visible nécessaire pour déclencher l'observation
+        };
+
+        // Fonction de rappel pour l'observation
+        const callback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Ajouter la classe pour rendre l'élément visible
+                    entry.target.classList.add('visible');
+                    // Ne plus observer cet élément après qu'il est devenu visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        // Créer l'observateur
+        const observer = new IntersectionObserver(callback, options);
+
+        // Observer chaque div
+        timelineDivs.forEach(div => {
+            observer.observe(div);
+        });
+    });
+
+
+    </script>
+
+
+
+
+    <div class="contenant">
+        <li>
+            
+            <span><i class='bx bxs-check-shield' style="--clr: #c91c1c;"></i></span>
+            <h4>Expertise international</h4>
+            <p><a href="#"><span>Support and Evolution</span></a></p>
+            
+        </li>
+        <li>
+            
+            <span><i class='bx bxs-check-shield' style="--clr: #1c2ac9;"></i></span>
+            <h4>Approche personnalisée</h4>
+            <p><a href="#"><span>support and Evolution</span></a></p>
+            
+        </li>
+        <li>
+            
+            <span><i class='bx bxs-check-shield' style="--clr: #1c75c9;"></i></span>
+            <h4>Réactivité et flexibilité</h4>
+            <p><a href="#"><span>support and Evolution</span></a></p>
+            
+        </li>
+    </div>
+
+
+    
+    
+
+   
+
+
+    <section class="footer">
+        <div class="footer-image">
+            <img src="images/logo visconty.png" style="max-width: 80%; width: 100px; height: auto;" alt="">
+            <p>VISCONTY TRADE LINK
+                Prestataire de services aux entreprises établies (PMI,PME et START UP ) et en plein développement.
+                En France et à l'International (EUROPE, AFRIQUE).</p>
+            <div class="footer-icons">
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <h4>liens</h4>
+            <li><a href="prestations-pid.html">approvisonneur conseil</a></li>
+            <li><a href="prestations-pid.html">produits regionaux</a></li>
+            <li><a href="prestations-pid.html">industrie</a></li>
+            <li><a href="prestations-pid.html">Commerce agroalimentaire</a></li>
+            <li><a href="prestations-pid.html">mise en relation</a></li>
+            <li><a href="prestations-pid.html">mandataire commercial</a></li>
+        </div>
+
+        
+        <div class="footer-content">
+            <h4>pages</h4>
+            <li><a href="accueil.html">Acceuil</a></li>
+            <li><a href="presentation.html">Presentations</a></li>
+            <li><a href="prestations.html">Prestations</a></li>
+            <li><a href="actualité.html">Actualités</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </div>
+
+        <div class="footer-content">
+            <h4>Adresse</h4>
+            <li>
+                <span><i class='bx bxs-location-plus'></i></span>
+                <p><a href="adresse:3 rue du Clos Londeix 87000 Limoges, Limoges" style="cursor: text;"><span>3 rue du Clos Londeix<br>87000 Limoges<br> Limoges </span></a></p>
+                
+            </li>
+
+            <li>
+                <span><i class='bx bxs-phone-call' ></i></span>
+                <p><a href="tel:+33 6 29 47 52 08">+33 6 29 47 52 08</a></p>
+            </li>
+
+            <li>
+                <span><i class='bx bxs-envelope' ></i></span>
+                <p><a href="mailto: contact@visconty.fr"> contact@visconty.fr</a></p>
+            </li>
+        </div>
+        
+    </section>
+
+    <div class="copyrightText">
+        <p>Copyright © 2022 – 2023 <span style="color: #196786;">Visconty Tradelink</span>. Tous les Droits sont Réservés.</p>
+    </div>
+
+    <button class="scroll-to-top hidden-mobile" id="scrollToTopBtn"><i class='bx bxs-up-arrow'></i></button>
+
+    <script>
+        // Get the button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Show or hide the button depending on scroll position
+        window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Show button after scrolling 300px
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+        });
+
+        // Scroll to top functionality
+        scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+
+
+       
+
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    
+    
+
+</body>
+</html>

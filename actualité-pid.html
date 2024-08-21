@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <div class="logo-container">
+            <img src="images/logo visconty.png" alt="logo" width="100px" >
+        </div>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar"><i class='bx bx-menu' ></i></label>
+        
+        <nav class="navigation">
+            <a href="accueil.html">Acceuil<span></span></a>
+            <a href="presentation.html" >Presentation<span></span></a>
+            <a href="prestations.html">Prestations<span></span></a>
+            <a href="actualité.html">Actualités<span></span></a>
+            <a href="contact.html">Contact<span></span></a>
+
+
+        </nav>
+        
+        
+    </header>
+
+
+
+    <section class="hero">
+        <div class="hero-text">
+            <h5 >Visconty</h5>
+            <h1 class="static-text">s'ouvre a</h1>
+            <div class="dynamic-txt">
+                <ul >
+                    <li><span >vous</span></li>
+                </ul>  
+            </div>
+            <p>Toute l'actualité et les informations importantes de Visconty Trade Link.</p>
+            <a href="tel:+33 6 29 47 52 08"><i class='bx bx-phone' ></i>+33 6 29 47 52 08</a>
+            
+        </div>
+
+        <div class="hero-img">
+            <img src="images/undraw_Working_remotely_re_6b3a-removebg-preview.png" alt="Description of image"   >
+        </div>
+
+    </section>
+
+    <div class="icons">
+        <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+    </div>
+
+
+
+
+    <section class="prod">
+        <h3 class="prod-title">produits visconty</h3>
+    
+        <div class="produit-container">
+            <div class="produit animate" data-name="p-1">
+                <img src="images/fromage1.png" alt="">
+                <h3>fromage</h3>
+                <div class="price">0.00£</div>
+            </div> 
+    
+            <div class="produit animate" data-name="p-2">
+                <img src="images/fromage_de_chevre-removebg-preview.png" alt="">
+                <h3>fromage de chèvre</h3>
+                <div class="price">0.00£</div>
+            </div> 
+    
+            <div class="produit animate" data-name="p-3">
+                <img src="images/Champagne__1_-removebg-preview.png" alt="">
+                <h3>champagne</h3>
+                <div class="price">0.00£</div>
+            </div> 
+    
+            <div class="produit animate" data-name="p-4">
+                <img src="images/fromage1.png" alt="">
+                <h3>chou</h3>
+                <div class="price">0.00£</div>
+            </div> 
+    
+            <div class="produit animate" data-name="p-5">
+                <img src="images/bon_vin-removebg-preview.png" style="max-width: 80%; height: auto; width: 100px;"  alt=""> 
+                <h3>vin</h3>
+                <div class="price">0.00£</div>
+            </div> 
+    
+            <div class="produit animate" data-name="p-6">
+                <img src="images/oooooo-removebg-preview.png" alt=""> 
+                <h3>L'huile d'olive</h3>
+                <div class="price">0.00£</div>
+            </div> 
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const produits = document.querySelectorAll('.produit');
+            
+                function animateOnScroll() {
+                    const windowHeight = window.innerHeight;
+                    
+                    produits.forEach(produit => {
+                        const rect = produit.getBoundingClientRect();
+                        if (rect.top < windowHeight - 100) { // Déclenche l'animation quand la carte est visible à 100px du bas de la fenêtre
+                            produit.classList.add('visible');
+                        }
+                    });
+                }
+            
+                // Initialiser l'animation au chargement de la page
+                animateOnScroll();
+            
+                // Ajouter l'écouteur d'événement de défilement
+                window.addEventListener('scroll', animateOnScroll);
+            });
+        </script>
+            
+    </section>
+
+    
+    
+    <div class="prod-preview">
+        <div class="preview" data-target="p-1">
+            <i class='bx bx-x-circle'></i>
+            <img src="images/fromage1.png" style="max-width: 80%; width: 200px; height: auto;" alt="">
+            <h3>fromage</h3>
+            <div class="stars">
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star-half' ></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Découvrez les delices et saveur des poroduits de visconty. </p>
+            <div class="price">$5.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">acheter</a>
+                <a href="#" class="cartt">ajouter</a>
+            </div>
+        </div>
+
+        <div class="preview" data-target="p-2">
+            <i class='bx bx-x-circle'></i>
+            <img src="images/fromage1.png" style="max-width: 80%; width: 200px; height: auto;" alt="">
+            <h3>fromage de chèvre</h3>
+            <div class="stars">
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star-half' ></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Découvrez les delices et saveur des poroduits de visconty. </p>
+            <div class="price">$5.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">acheter</a>
+                <a href="#" class="cartt">ajouter</a>
+            </div>
+        </div>
+
+        <div class="preview" data-target="p-3">
+            <i class='bx bx-x-circle'></i>
+            <img src="images/fromage1.png" style="max-width: 80%; width: 200px; height: auto;" alt="">
+            <h3>champagne</h3>
+            <div class="stars">
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star-half' ></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Découvrez les delices et saveur des poroduits de visconty. </p>
+            <div class="price">$5.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">acheter</a>
+                <a href="#" class="cartt">ajouter</a>
+            </div>
+        </div>
+
+        <div class="preview" data-target="p-4">
+            <i class='bx bx-x-circle'></i>
+            <img src="images/fromage1.png" style="max-width: 80%; width: 200px; height: auto;" alt="">
+            <h3>chou</h3>
+            <div class="stars">
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star-half' ></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Découvrez les delices et saveur des poroduits de visconty. </p>
+            <div class="price">$5.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">acheter</a>
+                <a href="#" class="cartt">ajouter</a>
+            </div>
+        </div>
+
+        <div class="preview" data-target="p-5">
+            <i class='bx bx-x-circle'></i>
+            <img src="images/bon_vin-removebg-preview.png" style="max-width: 50%; height: auto; width: 100px;"  alt=""> 
+            <h3>vin</h3>
+            <div class="stars">
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star' ></i>
+                <i class='bx bxs-star-half' ></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Découvrez les delices et saveur des poroduits de visconty. </p>
+            <div class="price">$5.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">acheter</a>
+                <a href="#" class="cartt">ajouter</a>
+            </div>
+        </div>
+
+        <div class="preview" data-target="p-6">
+            <i class='bx bx-x-circle'></i>
+            <img src="images/fromage1.png" style="max-width: 80%; width: 200px; height: auto;" alt="">
+            <h3>huile d'olive</h3>
+            <div class="stars">
+                <i class='bx bx-star bx-flashing' ></i>
+                <i class='bx bx-star bx-flashing' ></i>
+                <i class='bx bx-star bx-flashing' ></i>
+                <i class='bx bx-star bx-flashing' ></i>
+                <i class='bx bx-star bx-flashing' ></i>
+                <i class='bx bx-star bx-flashing' ></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Découvrez les delices et saveur des poroduits de visconty. </p>
+            <div class="price">$5.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">acheter</a>
+                <a href="#" class="cartt">ajouter</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const products = document.querySelectorAll('.produit');
+            const previewContainer = document.querySelector('.prod-preview');
+            const previewElement = document.querySelector('.prod-preview .preview');
+            const closeButton = document.querySelector('.prod-preview .preview .bx-x-circle');
+
+            // Function to open the preview
+            function openPreview(product) {
+                // Assuming product has data attributes for title, price, etc.
+                const title = product.querySelector('h3').innerText;
+                const price = product.querySelector('.price').innerText;
+                const imgSrc = product.querySelector('img').src;
+
+                // Update preview with product details
+                previewElement.querySelector('h3').innerText = title;
+                previewElement.querySelector('.price').innerText = price;
+                previewElement.querySelector('img').src = imgSrc;
+
+                // Show the preview
+                previewContainer.style.display = 'flex';
+                previewElement.classList.add('active');
+            }
+
+            // Function to close the preview
+            function closePreview() {
+                previewElement.classList.remove('active');
+                setTimeout(() => {
+                    previewContainer.style.display = 'none';
+                }, 300); // match this with the transition duration
+            }
+
+            // Add click event listener to each product
+            products.forEach(product => {
+                product.addEventListener('click', () => {
+                    openPreview(product);
+                });
+            });
+
+            // Add click event listener to close button
+            closeButton.addEventListener('click', () => {
+                closePreview();
+            });
+
+            // Close preview if clicked outside of the preview element
+            previewContainer.addEventListener('click', (event) => {
+                if (event.target === previewContainer) {
+                    closePreview();
+                }
+            });
+        });
+
+        
+
+    </script>
+    
+
+    
+
+        
+        
+   
+
+   
+
+    <section class="footer">
+        <div class="footer-image">
+            <img src="images/logo visconty.png" style="max-width: 80%; width: 100px; height: auto;" alt="">
+            <p>VISCONTY TRADE LINK
+                Prestataire de services aux entreprises établies (PMI,PME et START UP ) et en plein développement.
+                En France et à l'International (EUROPE, AFRIQUE).</p>
+            <div class="footer-icons">
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <h4>liens</h4>
+            <li><a href="prestations-pid.html">approvisonneur conseil</a></li>
+            <li><a href="prestations-pid.html">produits regionaux</a></li>
+            <li><a href="prestations-pid.html">industrie</a></li>
+            <li><a href="prestations-pid.html">Commerce agroalimentaire</a></li>
+            <li><a href="prestations-pid.html">mise en relation</a></li>
+            <li><a href="prestations-pid.html">mandataire commercial</a></li>
+        </div>
+
+        
+        <div class="footer-content">
+            <h4>pages</h4>
+            <li><a href="accueil.html">Acceuil</a></li>
+            <li><a href="presentation.html">Presentations</a></li>
+            <li><a href="prestations.html">Prestations</a></li>
+            <li><a href="actualité.html">Actualités</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </div>
+
+        <div class="footer-content">
+            <h4>Adresse</h4>
+            <li>
+                <span><i class='bx bxs-location-plus'></i></span>
+                <p><a href="adresse:3 rue du Clos Londeix 87000 Limoges, Limoges" style="cursor: text;"><span>3 rue du Clos Londeix<br>87000 Limoges<br> Limoges </span></a></p>
+                
+            </li>
+
+            <li>
+                <span><i class='bx bxs-phone-call' ></i></span>
+                <p><a href="tel:+33 6 29 47 52 08">+33 6 29 47 52 08</a></p>
+            </li>
+
+            <li>
+                <span><i class='bx bxs-envelope' ></i></span>
+                <p><a href="mailto: contact@visconty.fr"> contact@visconty.fr</a></p>
+            </li>
+        </div>
+        
+    </section>
+
+    <div class="copyrightText">
+        <p>Copyright © 2022 – 2023 <span style="color: #196786;">Visconty Tradelink</span>. Tous les Droits sont Réservés.</p>
+    </div>
+
+    <button class="scroll-to-top hidden-mobile" id="scrollToTopBtn"><i class='bx bxs-up-arrow'></i></button>
+
+    <script>
+        // Get the button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Show or hide the button depending on scroll position
+        window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Show button after scrolling 300px
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+        });
+
+        // Scroll to top functionality
+        scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

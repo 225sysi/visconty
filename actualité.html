@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+
+   
+    
+    <header>
+        <div class="logo-container">
+            <img src="images/logo visconty.png" alt="logo" width="100px" >
+        </div>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar"><i class='bx bx-menu' ></i></label>
+        
+        <nav class="navigation">
+            <a href="accueil.html">Acceuil<span></span></a>
+            <a href="presentation.html" >Presentation<span></span></a>
+            <a href="prestations.html">Prestations<span></span></a>
+            <a href="actualité.html" class="active">Actualites<span></span></a>
+            <a href="contact.html">Contact<span></span></a>
+
+           
+        </nav>
+        
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h5 >Visconty</h5>
+            <h1 class="static-text">actu<span style="color: #196786;">alite</span></h1>
+            <div class="dynamic-txts">
+                <ul >
+                    <li><span >croire</span></li>
+                </ul>  
+            </div>
+            <p>Prestataire de services aux entreprises établies (PMI,PME et START UP ) et en plein développement.
+                En France et à l'International (EUROPE, AFRIQUE).</p>
+            <a href="tel:+33 6 29 47 52 08"><i class='bx bx-phone' ></i>+33 6 29 47 52 08</a>
+            
+        </div>
+
+        <div class="hero-img">
+            <img src="images/actu-removebg-preview.png" width="120%" style="margin-top: auto; margin-right: 20px;" >
+        </div>
+
+    </section>
+
+    <div class="icons">
+        <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+    </div>
+
+
+    <section class="main">
+        <div class="slider">
+            <div class="slides">
+                <!-- Radio buttons for slide control -->
+                <input type="radio" name="radio-btn" id="radio1" checked>
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+    
+                <!-- Slide images -->
+                <div class="slide">
+                    <img src="images/viscontyphoto.jpg" alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="images/champagne.jpg" alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="images/hh.jpg" style="object-fit: cover;" alt="Image 3">
+                </div>
+    
+                <!-- Navigation labels for radio buttons -->
+                <div id="navigation">
+                    <label for="radio1" class="nav-button"></label>
+                    <label for="radio2" class="nav-button"></label>
+                    <label for="radio3" class="nav-button"></label>
+                </div>
+            </div>  
+        </div> 
+
+        <script>
+            const slides = document.querySelector('.slides');
+            const radios = document.querySelectorAll('input[name="radio-btn"]');
+            let currentIndex = 0;
+    
+            function moveToSlide(index) {
+                const offset = -100 * index;
+                slides.style.transform = `translateX(${offset}%)`;
+                radios[index].checked = true;
+            }
+    
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % radios.length;
+                moveToSlide(currentIndex);
+            }
+    
+            setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    
+        </script>
+    </section>
+
+
+    <section class="sect0">
+        
+        <div class="sect1">
+            <div class="sect1-services" >
+                <h1>les Actualites de visconty</h1>
+                <p>L'entreprise visconty trade link </p>
+               
+            </div>
+            <div class="row">
+                <div class="imgWrapper">
+                    <img src="images/viscontyphoto.jpg" alt="">
+                </div>
+                <div class="contentWrapper">
+                    <div class="content">
+                        <span class="textWrapper">
+                            actu<span style="color: #196786;">alité</span>
+                        </span>
+                        <h2>visconty</h2>
+                        <p>Visconty Trade Link a récemment élargi son assortiment de produits pour inclure de nouvelles matières premières. Cette diversification vise à répondre aux besoins croissants de ses clients dans des secteurs variés et à offrir une gamme plus complète de solutions de trading.</p>
+                        <a href="actualité-pid.html">produit <i class='bx bx-right-arrow-alt bx-flashing' style='color:#196786'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="sect2">
+            <div class="row2">
+    
+                <div class="contentWrapper2">
+                    <div class="content2">
+                        <span class="textWrapper2">
+                            actu<span style="color: #196786;">alité</span>
+                        </span>
+                        
+                        <h2>visconty</h2>
+                        <p>Dans le cadre de son engagement envers la durabilité, Visconty a mis en place des pratiques écologiques et responsables. L'entreprise travaille sur des projets visant à réduire l'empreinte carbone de ses opérations, à promouvoir le commerce équitable, et à soutenir les initiatives de développement durable.</p>
+                        <a href="actualité-pid.html">produit <i class='bx bx-right-arrow-alt bx-flashing' style='color:#196786'></i></a>
+                    </div>
+                </div>
+                <div class="imgWrapper2">
+                    <img src="images/hh.jpg" alt="">
+                </div>
+                
+            </div>
+        </div> 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                function checkVisibility() {
+                    var windowHeight = $(window).height();
+                    var scrollTop = $(window).scrollTop();
+                    var triggerPoint = windowHeight * 0.8;
+            
+                    $('.sect1, .sect2').each(function() {
+                        var elementTop = $(this).offset().top;
+            
+                        if (elementTop < scrollTop + triggerPoint) {
+                            $(this).addClass('visible');
+                        } else {
+                            $(this).removeClass('visible');
+                        }
+                    });
+                }
+            
+                $(window).on('scroll', checkVisibility);
+                checkVisibility(); // Vérifier la visibilité au chargement
+            });
+            </script>
+       
+    </section>
+
+
+   
+  
+
+    <section class="sec">
+        <div class="container">
+            <div class="box" style="--clr:#3324ff;">
+                <div class="icon"><i class='bx bx-lock'></i></div>
+                <div class="contenu">
+                    <h3>Actualités</h3>
+                    <p>Nos specialités incluent l'energie renouvelale,l'industrie,le commerce,l'agrobusiness,la viticulture,les équipements informatiques,la chimie,ainsi que le transport et la logistique. </p>
+                </div>
+            </div>
+            <div class="box" style="--clr:#ff2424;">
+                <div class="icon"><i class='bx bx-user-voice' ></i></div>
+                <div class="contenu">
+                    <h3>Actualités</h3>
+                    <p>Nos spécialités couvrent l'énergie renouvelable, de l'industrie, du commerce, de l'agrobusiness, de la viticulture, des équipements informatiques, de la chimie, du transport et de la logistique.</p>
+                </div>
+            </div>
+            <div class="box" style="--clr:#249eff;">
+                <div class="icon"><i class='bx bx-pointer' ></i></div>
+                <div class="contenu">
+                    <h3>Actualites </h3>
+                    <p>Nos spécialités couvrent l'énergie renouvelable, de l'industrie, du commerce, de l'agrobusiness, de la viticulture, des équipements informatiques, de la chimie, du transport et de la logistique.</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                function checkVisibility() {
+                    var windowHeight = $(window).height();
+                    var scrollTop = $(window).scrollTop();
+                    var triggerPoint = windowHeight * 0.8;
+
+                    $('.box').each(function() {
+                        var boxTop = $(this).offset().top;
+
+                        if (boxTop < scrollTop + triggerPoint) {
+                            $(this).addClass('visible');
+                        } else {
+                            $(this).removeClass('visible');
+                        }
+                    });
+                }
+
+                $(window).on('scroll', checkVisibility);
+                checkVisibility(); // Vérifier la visibilité au chargement
+            });
+        </script>
+
+    </section>
+
+
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.107145523959!2d1.2407439754760807!3d45.82913710901674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47fecb5225df62db%3A0xf4eea3f7a786deae!2s3%20Rue%20du%20Clos%20Londeix%2C%2087000%20Limoges%2C%20France!5e0!3m2!1sfr!2sma!4v1721389707350!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    
+
+
+
+    <section class="footer">
+        <div class="footer-image">
+            <img src="images/logo visconty.png" style="max-width: 80%; width: 100px; height: auto;" alt="">
+            <p>VISCONTY TRADE LINK
+                Prestataire de services aux entreprises établies (PMI,PME et START UP ) et en plein développement.
+                En France et à l'International (EUROPE, AFRIQUE).</p>
+            <div class="footer-icons">
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <h4>liens</h4>
+            <li><a href="prestations-pid.html">approvisonneur conseil</a></li>
+            <li><a href="prestations-pid.html">produits regionaux</a></li>
+            <li><a href="prestations-pid.html">industrie</a></li>
+            <li><a href="prestations-pid.html">Commerce agroalimentaire</a></li>
+            <li><a href="prestations-pid.html">mise en relation</a></li>
+            <li><a href="prestations-pid.html">mandataire commercial</a></li>
+        </div>
+
+        
+        <div class="footer-content">
+            <h4>pages</h4>
+            <li><a href="accueil.html">Acceuil</a></li>
+            <li><a href="presentation.html">Presentations</a></li>
+            <li><a href="prestations.html">Prestations</a></li>
+            <li><a href="actualité.html">Actualités</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </div>
+
+        <div class="footer-content">
+            <h4>Adresse</h4>
+            <li>
+                <span><i class='bx bxs-location-plus'></i></span>
+                <p><a href="adresse:3 rue du Clos Londeix 87000 Limoges, Limoges" style="cursor: text;"><span>3 rue du Clos Londeix<br>87000 Limoges<br> Limoges </span></a></p>
+                
+            </li>
+
+            <li>
+                <span><i class='bx bxs-phone-call' ></i></span>
+                <p><a href="tel:+33 6 29 47 52 08">+33 6 29 47 52 08</a></p>
+            </li>
+
+            <li>
+                <span><i class='bx bxs-envelope' ></i></span>
+                <p><a href="mailto: contact@visconty.fr"> contact@visconty.fr</a></p>
+            </li>
+        </div>
+        
+    </section>
+
+
+
+    <div class="copyrightText">
+        <p>Copyright © 2022 – 2023 <span style="color: #196786;">Visconty Tradelink</span>. Tous les Droits sont Réservés.</p>
+    </div>
+
+    <button class="scroll-to-top hidden-mobile" id="scrollToTopBtn"><i class='bx bxs-up-arrow'></i></button>
+
+    <script>
+        // Get the button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Show or hide the button depending on scroll position
+        window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Show button after scrolling 300px
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+        });
+
+        // Scroll to top functionality
+        scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+
+
+
+
+        
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+        
+    
+
+</body>
+</html>
