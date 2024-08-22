@@ -6024,9 +6024,10 @@ textarea.input{
     .main-container {
         display: flex;
         justify-items: center;
-
         background-image: url(images/Consultative\ sales\ \(2\)_smallest.gif); /* Optionnel: Image de fond différente pour les mobiles */
         padding: 10px;
+        width: 100%;
+        height: 100vh;
         
     }
 
@@ -6087,7 +6088,6 @@ textarea.input{
 
     .model {
         font-size: 2em;
-        margin-top: 5rem;
         display: block;
         text-align: center;
         text-transform: uppercase;
