@@ -1096,11 +1096,23 @@ section{
 }
 
 .hero-text a:hover{
-    background: #fff;
-    border: 1px solid #196786;
-    color: black;
-    transform: translateX(8px);
+    background:linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4 );
+    border: 1px solid linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4 );
+    color: #fff;
+    transform: translateY(5px);
+    background-size: 400%;
+    animation: glow 8s linear infinite;
 
+}
+
+@keyframes glow{
+    0%{
+        background-position: 0%;
+    }
+
+    100%{
+        background-position: 400%;
+    }
 }
 
 .hero-text a i{
@@ -3363,29 +3375,44 @@ a i {
 
 /* Styling for the message button */
 .message-button {
-    text-align: center;
+   text-align: center;
     padding: 5px;
-    background-color: #196786; /* Blue background */
-    border-top: 1px solid #ddd; /* Border to separate from content above */
+    background:#196786;
+    color: black;
 
 }
 
 .message-button:hover {
     text-decoration: none; /* Underline on hover */
     background-color: #0056b3; /* Darker blue background on hover */
+    background:linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4 );
+    border: 1px solid linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4 );
+    color: black;
+    background-size: 400%;
+    animation: glow 8s linear infinite;
 }
 
 /* Button link styling */
 .message-button a {
-    color: #fff; /* White text color */
-    text-decoration: none; /* Remove underline */
+    color: #fff;
+    text-decoration: none; 
     font-size: 15px;
     font-weight: bold;
 }
 
 .message-button a:hover {
-    text-decoration: none; /* Underline on hover */
-    background-color: #0056b3; /* Darker blue background on hover */
+   text-decoration: none;
+    color: #fff;
+}
+
+@keyframes glow{
+    0%{
+        background-position: 0%;
+    }
+
+    100%{
+        background-position: 400%;
+    }
 }
 
 
