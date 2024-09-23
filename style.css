@@ -1634,10 +1634,12 @@ a i {
     justify-content: flex-start;
     padding: 10% 15%;
     position: relative;
-    background: #f7f7f7;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     text-align: center;
+    background: url(images/undraw_Booking_re_gw4j.png);
+    background-repeat: no-repeat;
+    background-position: right;
     
     
 
